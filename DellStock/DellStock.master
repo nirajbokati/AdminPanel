@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DellStock.master.cs" Inherits="DellStock" %>
+
+<!DOCTYPE html>
+<html>
+
+<head runat="server">
+    <title>Dell Stock</title>
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Bootstrap/css/Sidebar.css" rel="stylesheet" />
+    <link href="Bootstrap/css/custom.css" rel="stylesheet" />
+
+    <script src="Bootstrap/js/bootstrap.js"></script>
+    <script src="Bootstrap/js/jquery-1.10.2.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <script src="Bootstrap/js/jquery-1.10.2.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .dropdown > .btn {
+            width: 100% !important;
+        }
+
+        .btn-primary {
+            background-color: #f2f4f7 !important;
+            color: #000 !important;
+            border: 1px solid #000 !important;
+        }
+
+        .btn-sm {
+            width: 100% !important;
+            padding: 2px !important;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <section id="bs-pricing-six" class="bs-pricing-four roomy-50 bg-white fix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 sidebar">
+                        <div class="bs bs-pricing">
+                            <div class="cotent">
+                                <img src="Bootstrap/img/admin.png" width="80" height="80" />
+                                <h3 class="category">Admin Panel</h3>
+                                <ul>
+                                    <li><a href="Dashboard.aspx"><span class="dashboard">Dashboard</span> </a></li>
+                                    <li><a href="Customer.aspx"><span class="customers">Customers</span> </a></li>
+                                    <li><a href="Product.aspx"><span class="product">Product </span></a></li>
+                                    <li><a href="Sales.aspx"><span class="sales">Sales </span></a></li>
+                                    <li><span class="stock">Stock</span></li>
+                                    <li><span class="suppliers">Suppliers </span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="col-lg-3" id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="form-control input-lg" placeholder="Search.." />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info btn-lg" type="button">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 dropdown pull-right">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Account
+                            <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">
+                                    <asp:Button ID="Button3" runat="server" CssClass="btn btn-default btn-sm" Text="General Settings" />
+
+                                </a></li>
+                                <li><a href="#">
+                                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-default btn-sm" Text="Privacy Settings" />
+
+                                </a></li>
+                                <li><a href="#">
+                                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-default btn-sm" Text="Logout" OnClick="logout" />
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </section>
+    </form>
+</body>
+</html>
+
